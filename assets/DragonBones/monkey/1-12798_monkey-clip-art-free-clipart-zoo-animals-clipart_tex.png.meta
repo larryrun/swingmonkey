@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "f23afc46-385c-40a3-a44f-4ed4406dc886",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "1-12798_monkey-clip-art-free-clipart-zoo-animals-clipart_tex": {
+      "ver": "1.0.4",
+      "uuid": "e913854a-a20a-4963-8190-e403e9959475",
+      "rawTextureUuid": "f23afc46-385c-40a3-a44f-4ed4406dc886",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -98,
+      "offsetY": 3.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 1850,
+      "height": 1015,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
