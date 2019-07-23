@@ -32,14 +32,16 @@ export default class Game extends cc.Component {
         monkeyBodyArmatureDisplay.playAnimation('SwingForward', 0);
         let rigibody = this.monkey.getComponent(cc.RigidBody)
         rigibody.linearVelocity = cc.v2(300, 0)
-        this.putRope(100, 0);
+        this.putRope(100, 40);
     }
 
     onTouchEnd(e) {
         let monkeyBodyArmatureDisplay = this.monkey.getComponentInChildren(dragonBones.ArmatureDisplay);
         monkeyBodyArmatureDisplay.playAnimation('Jump', 0);
         let ropeJoint = this.monkey.getComponent(cc.RopeJoint);
-        ropeJoint.destroy();
+        if(ropeJoint) {
+            ropeJoint.destroy();
+        }
     }
 
     onLoad () {
@@ -58,18 +60,21 @@ export default class Game extends cc.Component {
 
     putRope(x: number, length: number) {
         let ceilingNode = cc.instantiate(this.ceilingPrefab);
-        ceilingNode.setPosition(x, this.node.position.y - 10);
+        ceilingNode.setPosition(x, this.node.position.y);
         let ceilingRigidBody = ceilingNode.addComponent(cc.RigidBody);
         ceilingRigidBody.type = cc.RigidBodyType.Static;
         this.node.addChild(ceilingNode);
-
+        let y = this.node.position.y;
         let lastRopeSegRigidBody = ceilingRigidBody;
         for(let i = 0; i < length; i++) {
             let ropeSegNode = cc.instantiate(this.ropeSegPrefab);
-            let ropeJoint = ropeSegNode.getComponentInChildren(cc.RopeJoint);
+            ropeSegNode.setPosition(x, y);
+            let ropeJoint = ropeSegNode.getComponent(cc.RopeJoint);
             ropeJoint.connectedBody = lastRopeSegRigidBody;
-            ropeJoint.maxLength = 5;
+            ropeJoint.apply();
             this.node.addChild(ropeSegNode);
+            lastRopeSegRigidBody = ropeSegNode.getComponent(cc.RigidBody)
+            y -= ropeJoint.maxLength
         }
     }
 

@@ -50,7 +50,7 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_position": {
       "__type__": "cc.Vec3",
@@ -98,9 +98,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 24,
-      "g": 94,
-      "b": 158,
+      "r": 38,
+      "g": 129,
+      "b": 213,
       "a": 255
     },
     "_contentSize": {
@@ -215,12 +215,12 @@
     "anchor": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 1
+      "y": 0.5
     },
     "connectedAnchor": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0
+      "y": 0.5
     },
     "connectedBody": null,
     "collideConnected": false,
